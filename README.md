@@ -21,7 +21,13 @@ The configuration file is located at `~/.config/terminator/config`. Update
 the command under the `[[GrepPlugin]]` section to suit your needs. A few
 examples are below:
 
-    command = gvim --remote-silent +{line} {filepath} 
-    command = vim -g --remote-tab +{line} {filepath} 
-    command = gedit +{line} {filepath} 
+    command = gvim --remote-silent +{line} {filepath}
+    command = vim -g --remote-tab +{line} {filepath}
+    command = gedit +{line} {filepath}
     command = sublime {filepath}:{line}
+
+You can also change the pattern that is matched:
+
+    pattern = \b(?P<file>[^\s]+)(?::(?P<line>[0-9]+))?\b
+
+Just make sure you have a `(?P<file>...)` and a `(?P<line>...)`.
