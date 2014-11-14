@@ -11,7 +11,7 @@ from terminatorlib import config
 
 AVAILABLE = ['GrepPlugin']
 DEFAULT_COMMAND = 'gvim --remote-silent +{line} {filepath}'
-DEFAULT_PATTERN = r'(?P<file>[^\s:/.]+[/.][^\s:]+)(?::(?P<line>[0-9]+))?'
+DEFAULT_PATTERN = r'(?:^|[\s])(?P<file>/?([^\s:/]+/)+[^\s:/]+)(?::(?P<line>[0-9]+))?(?:$|[\s:])'
 
 
 class GrepPlugin(plugin.URLHandler):
